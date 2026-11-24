@@ -26,3 +26,22 @@ footer>a{color:#c45f4b;margin-left:auto}
 :root[data-theme="dark"] footer{color:#aab6c7}
 :root[data-theme="dark"] .theme-toggle{background:#1b2a40;color:#e8edf5;border-color:#35465e}
 @media(max-width:800px){.theme-toggle span{display:none}.instagram-button{margin-left:0}}
+
+.page-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px;text-align:left}
+.page-tile,.detail-card{display:block;text-decoration:none;background:var(--surface,#fff);border:1px solid var(--line,#e7ebf1);border-radius:18px;padding:24px;color:var(--text,#18363a);box-shadow:0 12px 34px #102b5208;transition:transform .2s ease,box-shadow .2s ease}
+.page-tile:hover{transform:translateY(-4px);box-shadow:0 18px 42px #102b5218}
+.page-tile>span,.detail-card>small{font-size:11px;font-weight:800;letter-spacing:2px;color:#df765d}
+.page-tile h3{font-size:18px;margin:16px 0 8px;color:var(--text,#18363a)}
+.page-tile p,.detail-card p{font-size:13px;line-height:1.75;color:var(--muted,#7a8798)}
+.page-tile>b,.detail-card>a{font-size:12px;color:#c45f4b}
+.page-details{background:var(--page,#f5f8f5)}
+.detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px;text-align:left}
+.detail-card{scroll-margin-top:25px}
+.detail-card h2{font:700 23px 'Playfair Display';margin:12px 0;color:var(--text,#18363a)}
+.detail-card>a{text-decoration:none;font-weight:700}
+.public-contact{display:grid;gap:8px;margin:22px 0;padding:18px;border:1px solid #ffffff30;border-radius:14px;background:#ffffff0d}
+.public-contact a{color:#fff;text-decoration:none;font-weight:700;font-size:15px}
+.public-contact small{color:#d3dce1;line-height:1.6;letter-spacing:0;font-weight:400}
+:root[data-theme="dark"] .page-tile,:root[data-theme="dark"] .detail-card{background:#172c36;border-color:#2d4850;color:#eff6f4}
+@media(max-width:900px){.page-grid,.detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.page-grid,.detail-grid{grid-template-columns:1fr}.page-tile,.detail-card{padding:20px}}
