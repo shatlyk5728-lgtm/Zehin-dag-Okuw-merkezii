@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150"><circle cx="75" cy="75" r="72" fill="#eaf7ff" stroke="#082f8f" stroke-width="3"/><path d="M35 25h63l-5 12H57L43 94h48l-3 12H22z" fill="#a80e2b"/><path d="M82 67h30c18 0 24 9 18 27l-6 17h-17l7-20c2-7 0-11-8-11H89z" fill="#a80e2b"/><text x="75" y="128" text-anchor="middle" font-family="Georgia" font-size="17" fill="#082f8f">ZEHIN DAG</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
+<title id="title">Zehin dag Okuw Merkezi</title><desc id="desc">A refined grey mountain emblem with a gold sunrise.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f8fa"/><stop offset="1" stop-color="#e8ebef"/></linearGradient><linearGradient id="mount" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#aeb5bd"/><stop offset="1" stop-color="#747d87"/></linearGradient></defs>
+<circle cx="110" cy="110" r="104" fill="url(#bg)" stroke="#c5a35b" stroke-width="3"/>
+<circle cx="148" cy="66" r="19" fill="#c5a35b" opacity=".9"/>
+<path d="M25 151 77 78l23 31 27-42 68 84H25Z" fill="url(#mount)"/>
+<path d="m77 78 13 18-13-5-12 15 12-28Zm50-11 19 24-18-8-11 16 10-32Z" fill="#e9edf0"/>
+<path d="M25 151h170" stroke="#c5a35b" stroke-width="3" stroke-linecap="round"/>
+<text x="110" y="179" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" letter-spacing="2" fill="#253348">ZEHIN DAG</text>
+<text x="110" y="195" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" letter-spacing="1.6" fill="#65707c">OKUW MERKEZI</text>
+</svg>
