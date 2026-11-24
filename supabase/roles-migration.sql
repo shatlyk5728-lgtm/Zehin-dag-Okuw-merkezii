@@ -1,0 +1,68 @@
+-- Zehin dag Okuw Merkezi: staff roles and row-level permissions
+-- Run once in Supabase SQL Editor after the initial schema.
+-- Existing admin role and policies are preserved.
+
+alter type public.app_role add value if not exists 'manager';
+alter type public.app_role add value if not exists 'accountant';
+
+-- Managers can work with operational records, but cannot see or change payments.
+create policy "manager read students" on public.students
+for select to authenticated using (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'manager')
+);
+create policy "manager insert students" on public.students
+for insert to authenticated with check (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'manager')
+);
+create policy "manager update students" on public.students
+for update to authenticated using (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'manager')
+) with check (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'manager')
+);
+create policy "manager read teachers" on public.teachers
+for select to authenticated using (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'manager')
+);
+create policy "manager manage groups" on public.study_groups
+for all to authenticated using (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'manager')
+) with check (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'manager')
+);
+create policy "manager read courses" on public.courses
+for select to authenticated using (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'manager')
+);
+create policy "manager manage applications" on public.applications
+for all to authenticated using (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role in ('admin','manager'))
+) with check (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role in ('admin','manager'))
+);
+create policy "manager manage attendance" on public.attendance
+for all to authenticated using (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'manager')
+) with check (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'manager')
+);
+
+-- Accountants can read student identity for billing and manage payment records only.
+create policy "accountant read students" on public.students
+for select to authenticated using (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'accountant')
+);
+create policy "accountant read payments" on public.payments
+for select to authenticated using (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'accountant')
+);
+create policy "accountant insert payments" on public.payments
+for insert to authenticated with check (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'accountant')
+);
+create policy "accountant update payments" on public.payments
+for update to authenticated using (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'accountant')
+) with check (
+  exists (select 1 from public.profiles p where p.id = (select auth.uid()) and p.role = 'accountant')
+);
