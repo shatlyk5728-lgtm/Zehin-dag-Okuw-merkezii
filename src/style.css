@@ -215,3 +215,11 @@ footer img{width:42px}
 .hero-sticker b{font-size:11px;letter-spacing:1.2px;text-transform:uppercase}
 @media(max-width:760px){.gallery-heading{align-items:start;flex-direction:column}.photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:230px 160px 160px}.photo-card.photo-main{grid-column:span 2;grid-row:auto}.gallery-follow{align-self:flex-start}}
 @media(max-width:430px){.photo-grid{gap:10px;grid-template-rows:190px 135px 135px}.photo-card span{font-size:12px;left:12px;bottom:12px}}
+
+/* Click-to-zoom gallery */
+.photo-card{cursor:zoom-in}
+.photo-lightbox{position:fixed;inset:0;z-index:1000;background:#06162aee;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;padding:70px 24px 28px;backdrop-filter:blur(12px)}
+.photo-lightbox>img{display:block;max-width:min(1100px,92vw);max-height:76vh;object-fit:contain;border-radius:16px;box-shadow:0 24px 80px #0008}
+.photo-lightbox>a{display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:999px;background:#fff;color:#155aa4;text-decoration:none;font-weight:800}
+.photo-lightbox-close{position:absolute;right:28px;top:22px;width:46px;height:46px;border:1px solid #ffffff55;border-radius:50%;background:#ffffff18;color:#fff;font-size:30px;line-height:1;cursor:pointer}
+@media(max-width:560px){.photo-lightbox{padding:64px 14px 22px}.photo-lightbox>img{max-width:96vw;max-height:72vh}.photo-lightbox-close{right:16px;top:12px}}
