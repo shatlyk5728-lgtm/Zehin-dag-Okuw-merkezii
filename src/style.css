@@ -223,3 +223,37 @@ footer img{width:42px}
 .photo-lightbox>a{display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:999px;background:#fff;color:#155aa4;text-decoration:none;font-weight:800}
 .photo-lightbox-close{position:absolute;right:28px;top:22px;width:46px;height:46px;border:1px solid #ffffff55;border-radius:50%;background:#ffffff18;color:#fff;font-size:30px;line-height:1;cursor:pointer}
 @media(max-width:560px){.photo-lightbox{padding:64px 14px 22px}.photo-lightbox>img{max-width:96vw;max-height:72vh}.photo-lightbox-close{right:16px;top:12px}}
+
+/* Student studio - expanded learning dashboard */
+.studio-section{background:linear-gradient(145deg,#f1f7ff,#fff 52%,#edf5ff);text-align:left;position:relative;overflow:hidden}
+.studio-intro{text-align:center;max-width:760px;margin:0 auto 38px}
+.studio-intro h2{font-size:clamp(34px,4vw,50px);margin:14px 0;color:#102f55}
+.studio-intro p{color:#68809b;line-height:1.8}
+.studio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.studio-card{position:relative;min-height:245px;padding:26px;border:1px solid #dce9f8;border-radius:22px;background:#ffffffed;box-shadow:0 16px 42px #123f460a;transition:transform .25s,box-shadow .25s;overflow:hidden}
+.studio-card:hover{transform:translateY(-5px);box-shadow:0 22px 48px #123f4617}
+.studio-card>span,.studio-card>small{font-size:10px;font-weight:900;letter-spacing:1.8px;color:#2679d1}
+.studio-card h3{font:700 22px 'Playfair Display',Georgia,serif;color:#163b63;margin:16px 0 10px}
+.studio-card p{font-size:13px;line-height:1.7;color:#6d829a}
+.focus-clock{font-size:54px;line-height:1.2;font-weight:800;letter-spacing:-2px;color:#0866e8;margin:20px 0}
+.goal-number{font-size:42px;font-weight:800;color:#0866e8;margin:20px 0}
+.goal-number small{font-size:13px;color:#68809b}
+.studio-card a{color:#0866e8;font-size:13px;font-weight:800;text-decoration:none}
+.studio-notes{display:block;width:100%;min-height:110px;resize:vertical;padding:13px;border:1px solid #dce8f7;border-radius:12px;background:#f8fbff;color:#173c64;outline:none}
+.studio-notes:focus,.studio-faq input:focus{border-color:#2d83f4;box-shadow:0 0 0 3px #0866e815}
+.study-check{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #edf2f8;color:#45627f;font-size:13px}
+.study-check input{accent-color:#0866e8;width:17px;height:17px}
+.flash-face{width:100%;min-height:105px;border:1px dashed #9fc7f2;border-radius:14px;background:linear-gradient(135deg,#edf6ff,#fff);color:#14599e;font-size:24px;font-weight:800}
+.flash-face small{display:block;font-size:11px;color:#7a91aa;margin-top:8px}
+.studio-actions{display:flex;gap:9px;margin-top:12px}
+.studio-actions button{border:0;border-radius:999px;padding:10px 18px;background:#0866e8;color:white;font-weight:800;cursor:pointer}
+.studio-actions button+button{background:#eaf3ff;color:#155da8}
+.studio-faq{display:grid;grid-template-columns:1fr minmax(220px,320px);gap:16px;align-items:center;margin-top:28px;padding:25px;border:1px solid #dce9f8;border-radius:20px;background:#fff}
+.studio-faq h3{font:700 24px 'Playfair Display',Georgia,serif;color:#163b63;margin:8px 0}
+.studio-faq input{padding:13px 15px;border:1px solid #dce8f7;border-radius:12px;outline:none}
+.faq-pills{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.faq-pills details{padding:14px;border-radius:12px;background:#f4f8fe;color:#355879;font-size:13px}
+.faq-pills summary{font-weight:800;cursor:pointer}
+.faq-pills p{line-height:1.6;color:#69809a}
+@media(max-width:900px){.studio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.faq-pills{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.studio-grid{grid-template-columns:1fr}.studio-card{min-height:0}.studio-faq{grid-template-columns:1fr}.faq-pills{grid-template-columns:1fr}.focus-clock{font-size:46px}}
